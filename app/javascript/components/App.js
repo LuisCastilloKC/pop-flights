@@ -1,8 +1,12 @@
 import React from 'react'
+import {Route, Switch } from 'react-router-dom'
 
 const App = () => {
     return(
-        <div>Hello World!</div>
+        <Switch>
+            <Route exact path="/" component={Airlines} />
+            <Route exact path="/airlines/:slug" component={Airline} />
+        </Switch>
     )
 }
 

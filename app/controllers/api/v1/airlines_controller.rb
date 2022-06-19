@@ -1,6 +1,8 @@
 module Api
     module V1
         class AirlinesController < ApplicationController
+            ## allow token to pass to the create method //fixed error InvalidAuthenticityToken
+            protect_from_forgery with: :null_session
 
             def index
                 airlines = Airline.all

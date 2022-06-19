@@ -1,6 +1,8 @@
 module Api
     module V1
         class ReviewsController < ApplicationController
+            ## allow token to pass to the create method //fixed error InvalidAuthenticityToken
+            protect_from_forgery with: :null_session
 
             def create
                 review = Review.new(review_params)
